@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import './addStudent.scss';
 
 export const AddStudent = (props) => {
@@ -17,9 +18,14 @@ export const AddStudent = (props) => {
    const handleOnclickSubmit = (event) => {
       event.preventDefault();
 
-      props.addStudent(student1);
-      setStudentName('');
-      setStudentClass('');
+      if (studentName && studentClass) {
+         props.addStudent(student1);
+         setStudentName('');
+         setStudentClass('');
+      } else {
+         toast.warning('Missing requirement');
+         return;
+      }
    };
 
    const handleOnchangeName = (event) => {
@@ -62,7 +68,7 @@ export const AddStudent = (props) => {
                   type="submit"
                   className="w-100 btn btn-primary w-25"
                >
-                  Submit
+                  Add
                </button>
             </div>
          </form>

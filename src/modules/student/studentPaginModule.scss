@@ -1,0 +1,15 @@
+.paginationBttns {
+   width: 80%;
+   height: 40px;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   a {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 5px;
+      border: 1px solid #2b23ff;
+      cursor: pointer;
+      text-decoration: none;
+   }
+}
